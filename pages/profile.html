@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Профиль пользователя - Деканат ВУЗа</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="../images/logo.png" alt="Логотип колледжа">
+                <h1>Деканат ВУЗа</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Главная</a></li>
+                    <li><a href="login.html">Вход</a></li>
+                    <li><a href="profile.html" class="active">Профиль</a></li>
+                    <li><a href="cart.html">Работа с данными</a></li>
+                </ul>
+            </nav>
+            <button id="theme-toggle" class="theme-toggle">
+                <img src="../images/theme-icon.png" alt="Сменить тему">
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="profile-section">
+            <div class="container">
+                <div class="profile-header">
+                    <div class="avatar">
+                        <img src="../images/user-avatar.png" alt="Аватар пользователя">
+                    </div>
+                    <div class="profile-info">
+                        <h2 id="user-name">Иванов Иван Иванович</h2>
+                        <p id="user-role">Студент</p>
+                        <p id="user-group">Группа: ПР-25.106</p>
+                    </div>
+                </div>
+
+                <div class="profile-content">
+                    <div class="profile-card">
+                        <h3>Личная информация</h3>
+                        <ul>
+                            <li><strong>Факультет:</strong> Информационные системы и программирование</li>
+                            <li><strong>Курс:</strong> 2</li>
+                            <li><strong>Год поступления:</strong> 2024</li>
+                            <li><strong>Форма обучения:</strong> Очная</li>
+                        </ul>
+                    </div>
+
+                    <div class="profile-card">
+                        <h3>Успеваемость</h3>
+                        <table class="grades-table">
+                            <thead>
+                                <tr>
+                                    <th>Дисциплина</th>
+                                    <th>Оценка</th>
+                                    <th>Преподаватель</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Проектирование веб-приложений</td>
+                                    <td>5</td>
+                                    <td>Терехова А.А.</td>
+                                </tr>
+                                <tr>
+                                    <td>Базы данных</td>
+                                    <td>4</td>
+                                    <td>Петров П.С.</td>
+                                </tr>
+                                <tr>
+                                    <td>Программирование</td>
+                                    <td>5</td>
+                                    <td>Сидорова О.И.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Новосибирский авиационный технический колледж имени Б.С.Галущака</p>
+        </div>
+    </footer>
+
+    <script src="../js/theme.js"></script>
+</body>
+</html>

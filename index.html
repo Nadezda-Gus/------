@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Деканат ВУЗа - Главная</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="images/logo.png" alt="Логотип колледжа">
+                <h1>Деканат ВУЗа</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="pages/login.html">Вход</a></li>
+                    <li><a href="pages/profile.html">Профиль</a></li>
+                    <li><a href="pages/cart.html">Работа с данными</a></li>
+                </ul>
+            </nav>
+            <button id="theme-toggle" class="theme-toggle">
+                <img src="images/theme-icon.png" alt="Сменить тему">
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h2>Система управления учебной деятельностью</h2>
+                <p>Автоматизированная система для сотрудников деканата, преподавателей и студентов</p>
+                <div class="cta-buttons">
+                    <a href="pages/login.html" class="btn btn-primary">Войти в систему</a>
+                    <a href="#features" class="btn btn-secondary">Узнать больше</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="features">
+            <div class="container">
+                <h2>Основные возможности системы</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <h3>Управление студентами</h3>
+                        <p>Добавление, редактирование и удаление данных о студентах</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Ведение успеваемости</h3>
+                        <p>Внесение и корректировка оценок по дисциплинам</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Формирование отчетов</h3>
+                        <p>Создание сводных отчетов по итогам сессии</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Ролевой доступ</h3>
+                        <p>Разделение прав доступа для студентов, преподавателей и сотрудников деканата</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Новосибирский авиационный технический колледж имени Б.С.Галущака</p>
+        </div>
+    </footer>
+
+    <script src="js/theme.js"></script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Работа с данными - Деканат ВУЗа</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="../images/logo.png" alt="Логотип колледжа">
+                <h1>Деканат ВУЗа</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Главная</a></li>
+                    <li><a href="login.html">Вход</a></li>
+                    <li><a href="profile.html">Профиль</a></li>
+                    <li><a href="cart.html" class="active">Работа с данными</a></li>
+                </ul>
+            </nav>
+            <button id="theme-toggle" class="theme-toggle">
+                <img src="../images/theme-icon.png" alt="Сменить тему">
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="data-section">
+            <div class="container">
+                <h2>Управление данными студентов</h2>
+                
+                <div class="data-actions">
+                    <button class="btn btn-primary" id="add-student">Добавить студента</button>
+                    <button class="btn btn-secondary" id="edit-student">Редактировать</button>
+                    <button class="btn btn-danger" id="delete-student">Удалить</button>
+                    <button class="btn btn-info" id="generate-report">Сформировать отчет</button>
+                </div>
+
+                <div class="students-table-container">
+                    <table class="students-table">
+                        <thead>
+                            <tr>
+                                <th><input type="checkbox" id="select-all"></th>
+                                <th>ID</th>
+                                <th>ФИО</th>
+                                <th>Группа</th>
+                                <th>Курс</th>
+                                <th>Год поступления</th>
+                                <th>Статус</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><input type="checkbox" class="student-checkbox"></td>
+                                <td>1</td>
+                                <td>Иванов Иван Иванович</td>
+                                <td>ПР-25.106</td>
+                                <td>2</td>
+                                <td>2024</td>
+                                <td>Активный</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" class="student-checkbox"></td>
+                                <td>2</td>
+                                <td>Петрова Анна Сергеевна</td>
+                                <td>ПР-25.106</td>
+                                <td>2</td>
+                                <td>2024</td>
+                                <td>Активный</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" class="student-checkbox"></td>
+                                <td>3</td>
+                                <td>Сидоров Алексей Петрович</td>
+                                <td>ПР-25.105</td>
+                                <td>2</td>
+                                <td>2024</td>
+                                <td>Активный</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div id="message-area" class="message"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Новосибирский авиационный технический колледж имени Б.С.Галущака</p>
+        </div>
+    </footer>
+
+    <script src="../js/theme.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>
