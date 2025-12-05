@@ -4,98 +4,233 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Работа с данными - Деканат ВУЗа</title>
-    <link rel="stylesheet" href="../css/style.css">
-</head>
-<body>
-    <header>
-        <div class="container">
-            <div class="logo">
-                <img src="../images/logo.png" alt="Логотип колледжа">
-                <h1>Деканат ВУЗа</h1>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="../index.html">Главная</a></li>
-                    <li><a href="login.html">Вход</a></li>
-                    <li><a href="profile.html">Профиль</a></li>
-                    <li><a href="cart.html" class="active">Работа c данными</a></li>
-                </ul>
-            </nav>
-            <button id="theme-toggle" class="theme-toggle">
-                <img src="../images/theme-icon.png" alt="Сменить тему">
-            </button>
-        </div>
-    </header>
+    <style>
+        /* Основные стили */
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --background-color: #f9f9f9;
+            --surface-color: #ffffff;
+            --text-color: #333333;
+            --text-secondary: #666666;
+            --border-color: #dddddd;
+            --shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
 
-    <main>
-        <section class="data-section">
-            <div class="container">
-                <h2>Управление данными студентов</h2>
-                
-                <div class="data-actions">
-                    <button class="btn btn-primary" id="add-student">Добавить студента</button>
-                    <button class="btn btn-secondary" id="edit-student">Редактировать</button>
-                    <button class="btn btn-danger" id="delete-student">Удалить</button>
-                    <button class="btn btn-info" id="generate-report">Сформировать отчет</button>
-                </div>
+        [data-theme="dark"] {
+            --primary-color: #34495e;
+            --secondary-color: #2980b9;
+            --accent-color: #c0392b;
+            --background-color: #1a1a1a;
+            --surface-color: #2d2d2d;
+            --text-color: #f0f0f0;
+            --text-secondary: #b0b0b0;
+            --border-color: #444444;
+            --shadow: 0 2px 5px rgba(0,0,0,0.3);
+        }
 
-                <div class="students-table-container">
-                    <table class="students-table">
-                        <thead>
-                            <tr>
-                                <th><input type="checkbox" id="select-all"></th>
-                                <th>ID</th>
-                                <th>ФИО</th>
-                                <th>Группа</th>
-                                <th>Курс</th>
-                                <th>Год поступления</th>
-                                <th>Статус</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><input type="checkbox" class="student-checkbox"></td>
-                                <td>1</td>
-                                <td>Иванов Иван Иванович</td>
-                                <td>ПР-25.106</td>
-                                <td>2</td>
-                                <td>2024</td>
-                                <td>Активный</td>
-                            </tr>
-                            <tr>
-                                <td><input type="checkbox" class="student-checkbox"></td>
-                                <td>2</td>
-                                <td>Петрова Анна Сергеевна</td>
-                                <td>ПР-25.106</td>
-                                <td>2</td>
-                                <td>2024</td>
-                                <td>Активный</td>
-                            </tr>
-                            <tr>
-                                <td><input type="checkbox" class="student-checkbox"></td>
-                                <td>3</td>
-                                <td>Сидоров Алексей Петрович</td>
-                                <td>ПР-25.105</td>
-                                <td>2</td>
-                                <td>2024</td>
-                                <td>Активный</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-                <div id="message-area" class="message"></div>
-            </div>
-        </section>
-    </main>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            transition: background-color 0.3s, color 0.3s;
+        }
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Новосибирский авиационный технический колледж имени Б.С.Галущака</p>
-        </div>
-    </footer>
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
 
-    <script src="../js/theme.js"></script>
-    <script src="../js/main.js"></script>
-</body>
-</html>
+        /* Шапка */
+        header {
+            background-color: var(--surface-color);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 50px;
+            margin-right: 15px;
+        }
+
+        .logo h1 {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav li {
+            margin-left: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover, nav a.active {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .theme-toggle img {
+            width: 24px;
+            height: 24px;
+            transition: transform 0.3s, filter 0.3s;
+        }
+
+        .theme-toggle:hover img {
+            transform: rotate(30deg);
+        }
+
+        [data-theme="dark"] .theme-toggle img {
+            filter: invert(1) brightness(2);
+        }
+
+        /* Основной контент */
+        main {
+            min-height: calc(100vh - 140px);
+            padding: 30px 0;
+        }
+
+        .data-section {
+            padding: 30px 0;
+        }
+
+        .data-section h2 {
+            margin-bottom: 30px;
+            color: var(--primary-color);
+        }
+
+        .data-actions {
+            margin-bottom: 30px;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #c0392b;
+        }
+
+        .btn-secondary {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background-color: #2980b9;
+        }
+
+        .btn-danger {
+            background-color: #e74c3c;
+            color: white;
+        }
+
+        .btn-danger:hover {
+            background-color: #c0392b;
+        }
+
+        .btn-info {
+            background-color: #3498db;
+            color: white;
+        }
+
+        .btn-info:hover {
+            background-color: #2980b9;
+        }
+
+        /* Таблицы */
+        .students-table-container {
+            background-color: var(--surface-color);
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            margin-bottom: 30px;
+            overflow-x: auto;
+        }
+
+        .students-table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 800px;
+        }
+
+        .students-table th, .students-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .students-table th {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .students-table tr:hover {
+            background-color: rgba(0,0,0,0.05);
+        }
+
+        [data-theme="dark"] .students-table tr:hover {
+            background-color: rgba(255,255,255,0.05);
+        }
+
+        .students-table input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+        }
